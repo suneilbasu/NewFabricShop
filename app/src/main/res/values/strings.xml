@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Fabric Shop</string>
+    <string name="crime_title_hint">Fabric choice.</string>
+    <string name="crime_title_label">Title</string>
+    <string name="crime_details_label">Details</string>
+    <string name="crime_solved_label">purchased</string>
+    <string name="date_picker_title">Date of purchase:</string>
+    <string name="new_crime">New Crime</string>
+    <string name="show_subtitle">Show Subtitle</string>
+    <string name="hide_subtitle">Hide Subtitle</string>
+    <string name="subtitle_format">%1$d basket</string>
+    <string name="fabric_cost">how much it costs</string>
+</resources>
