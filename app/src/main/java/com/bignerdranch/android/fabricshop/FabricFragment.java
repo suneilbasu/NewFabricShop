@@ -2,6 +2,7 @@ package com.bignerdranch.android.fabricshop;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -37,6 +38,7 @@ public class FabricFragment extends Fragment {
     private SeekBar mSeekFabric;
     private EditText mFabricCostInput;
     private TextView mFabricCostPerM;
+    private Button mFabricIcon;
 
     public static FabricFragment newInstance(UUID crimeId) {
         Bundle args = new Bundle();
@@ -59,6 +61,19 @@ public class FabricFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_fabric, container, false);
 //
+
+        mTitleField = (EditText) v.findViewById(R.id.fabric_title);
+        mTitleField.setText(mFabric.getTitle());
+
+        mFabricIcon = (Button) v.findViewById(R.id.fabric_icon);
+
+        int iconId = mFabric.getIcon();
+
+        if (iconId > 0) {
+            Drawable icon = v.getResources().getDrawable(iconId);
+            mFabricIcon.setBackground(icon);
+        }
+
         mFabricCostPerM = (TextView) v.findViewById(R.id.fabric_cost_per_m);
         mSeekFabric = (SeekBar) v.findViewById(R.id.seekFabric);
         final TextView seekBarValue = (TextView) v.findViewById(R.id.howLong);

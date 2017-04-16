@@ -1,6 +1,8 @@
 package com.bignerdranch.android.fabricshop;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 public class Fabric {
@@ -10,6 +12,7 @@ public class Fabric {
     private Date mDate;
     private boolean mSolved;
     private double mFabricCost;
+    private int mIcon;
 
     public double getFabricCost() {
         return mFabricCost;
@@ -70,5 +73,34 @@ public class Fabric {
 
     public void setSolved(boolean solved) {
         mSolved = solved;
+    }
+
+    public static List<Fabric> initialFabrics() {
+        List<Fabric> fabrics = new ArrayList<>();
+
+        Fabric f1 = new Fabric();
+        f1.setTitle("Glamorous Beige");
+        f1.setIcon(R.mipmap.horridbeige);
+
+        Fabric f2 = new Fabric();
+        f2.setTitle("Snazzy Blue");
+        f2.setIcon(R.mipmap.snazzyblue);
+
+        Fabric f3 = new Fabric();
+        f3.setTitle("Farmer Brown");
+
+        fabrics.add(f1);
+        fabrics.add(f2);
+        fabrics.add(f3);
+
+        return fabrics;
+    }
+
+    public void setIcon(int i) {
+        this.mIcon = i;
+    }
+
+    public int getIcon() {
+        return this.mIcon;
     }
 }

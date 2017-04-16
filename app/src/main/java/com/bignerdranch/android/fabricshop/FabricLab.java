@@ -20,7 +20,7 @@ public class FabricLab {
     }
 
     private FabricLab(Context context) {
-        mFabrics = new ArrayList<>();
+        mFabrics = Fabric.initialFabrics();
     }
 
     public void addCrime(Fabric c) {
